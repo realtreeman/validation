@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +19,11 @@
 		<form:errors path="email" />
 	</div>
 	<div>
-		비밀번호 : <form:input path="password" type="password"/>
+		비밀번호 : <form:input path="password" type="text"/>
 		<form:errors path="password" />
 	</div>
 	<div>
-		비밀번호확인 : <form:input path="confirmPassword" type="password"/>
+		비밀번호확인 : <form:input path="confirmPassword" type="text"/>
 		<form:errors path="confirmPassword" />
 	</div>
 	<button>회원가입</button>
