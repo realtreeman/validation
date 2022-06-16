@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import me.realtree.model.Member;
 import me.realtree.service.MemberService;
+import me.realtree.service.MemberServiceImpl;
 import me.realtree.validation.MemberValidator;
 
 @Controller
@@ -20,7 +21,7 @@ import me.realtree.validation.MemberValidator;
 public class MemberController {
 	
 	@Autowired
-	MemberService service; 
+	MemberServiceImpl service;
 	
 	@GetMapping("/success")
 	public String success(Model model) {
@@ -34,7 +35,8 @@ public class MemberController {
 	}
 	@PostMapping("/register")
 	public String register(@Valid Member member, Errors errors) {
-		new MemberValidator().validate(member, errors);
+		service.register(member);
+//		new MemberValidator().validate(member, errors);
 		if(errors.hasErrors()) {
 			return "member/register";
 		}

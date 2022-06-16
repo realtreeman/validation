@@ -2,13 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ include file="../layout/header.jsp" %>
+
 <form:form action="register" method="post" modelAttribute="member">
 	<div>
 		이름 : <form:input path="userName"/>
@@ -29,5 +24,4 @@
 	<button>회원가입</button>
 </form:form>
 
-</body>
-</html>
+<%@ include file="../layout/footer.jsp" %>

@@ -21,6 +21,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void register(Member member) {
+		mapper.insert(member);
 	}
 
 	@Override

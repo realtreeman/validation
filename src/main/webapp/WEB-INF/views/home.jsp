@@ -1,22 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<div>
-	<a href="?lang=ko">한국어</a>
-	<a href="?lang=en">영어</a>
+
+<%@ include file="layout/header.jsp" %>
+
+<div class="container">
+	<h3>이 사이트는 회원만 사용 가능합니다.. 밑에 회원가입 하세요!</h3>
+	<a href="${contextPath}/member/register"><h3>회원가입</h3></a>
 </div>
 
-<spring:message code="board.bno"  /><br>
-<spring:message code="board.title" /><br>
-<spring:message code="board.content" /><br>
-<spring:message code="board.writer" /><br>
-
-</body>
-</html>
+<%@ include file="layout/footer.jsp" %>
