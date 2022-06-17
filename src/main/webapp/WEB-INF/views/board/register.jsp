@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ include file="../layout/header.jsp" %>
 
-<form:form action="register" modelAttribute="boardVo">
+<form:form action="register" modelAttribute="board">
 	제목 : <form:input type="text" path="title" />
 	<form:errors path="title" class="error" element="div"/><br>
 	내용 : <br>

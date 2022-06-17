@@ -12,20 +12,32 @@ import me.realtree.model.Member;
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
-	MemberMapper mapper;
+	private MemberMapper memberMapper;
 	
 	@Override
 	public List<Member> getList() {
-		return mapper.getList();
+		return memberMapper.getList();
 	}
 
 	@Override
 	public void register(Member member) {
-		mapper.insert(member);
+		memberMapper.insert(member);
 	}
 
 	@Override
 	public void modify(Member member) {
+		memberMapper.update(member);
 	}
 
+	@Override
+	public void remove(Long id) {
+		memberMapper.delete(id);
+	}
+
+	@Override
+	public Member get(Long id) {
+		return memberMapper.get(id);
+	}
+	
+	
 }

@@ -37,4 +37,8 @@ public class Member {
 	private String password;
 	private String confirmPassword;
 	
+	public boolean passwordMatch(String password) {
+		return this.password.equals(password);
+	}
+	
 }
