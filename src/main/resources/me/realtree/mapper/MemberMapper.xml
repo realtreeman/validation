@@ -26,6 +26,11 @@
 		updateDate = now()
 		where id = #{id}
 	</update>
-
+	<select id="get" resultType="me.realtree.model.Member">
+		select * from member_tbl where id = #{id}
+	</select>
+	<delete id="delete">
+		delete from member_tbl where id=#{id}
+	</delete>
 
 </mapper>

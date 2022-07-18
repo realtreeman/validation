@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.clearfix::after { display: block; content: ''; clear: both;}
+
+header { border-bottom: 1px solid #bebebe;}
+header > div {width: 1200px; margin: auto;}
+header .top { padding:10px 0 0;}
+header .top ul { float: right;}
+header .top ul li {float: left;}
+header .top ul li ~ li::before {
+    display: inline-block; content: ''; width: 1px; height: 10px; background: #636363;}
+header .top ul li a {padding: 0 14px; font-weight: bold; font-size: 14px; color: #636363;}
+/* 223 55*/
+header .bottom h1 { display: inline-block; position: relative; bottom: 5px;}
+header .bottom h1 a { width: 200px; height: 33px; background: url(/img/logo.png); text-indent: -9999px;}
+header .bottom ul { display: inline-block; margin-left: 25px; position: relative; top: 26px}
+header .bottom ul li {float: left; padding: 0 23px;}
+header .bottom ul li a {padding: 15px 23px; font-size: 20px; font-weight: bold;}
+
+section > div{width: 1200px; margin: auto; padding-top: 45px;}
+section > div > h2{margin: auto; width: 300px; height: 200px; background: url(/img/login_logo_w.png); text-indent: -9999px; background-size: contain; background-repeat: no-repeat;}
+section > div > p{text-align: center; font-size: 20px; color: #636363; padding-bottom: 45px;}
+section{background-image: url(/img/nav-bg.png);}
+
+.login{ position: relative; padding-top: 45px;}
+.login button{width:150px; height: 35px; border-radius: 6px; background: skyblue;}
+.login > div{text-align: center;}
+
+.login input{border-radius: 10px;}
+.login input::placeholder{text-indent: 15px;}
+.login .remember{padding: 15px 0 27px 0;}
+.login > div > input[type="text"]{width: 270px; height: 35px;}
+.login > div > input[name="u_id"]{width: 270px; height: 35px; margin-bottom: 10px;}
+.login > div > input[name="u_pw"]{width: 270px; height: 35px;}
+.login > div > a{border: 1px solid #bdbdbd; width: 185px; height: 35px; border-radius: 8px; line-height: 35px; text-align: center; color: #bdbdbd; font-size: 14px; margin-bottom: 18px;} 
+.remember_text{padding-bottom: 30px; color: white;}
+.remember_text span{color: red; font-weight: bold;}
