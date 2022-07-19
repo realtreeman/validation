@@ -30,9 +30,7 @@
             </div>
             <div class="bottom">
                 <div class="logo clearfix">
-                    <a class="char_img">
-                       	<img src="${contextPath}/resources/img/logo.png" alt="">
-                    </a>
+                    <a class="char_img"></a>
                     <ul class="clearfix">
                         <li><a href="">디아블로2레저렉션</a></li>
                         <li><a href="">오늘의 득템목록</a></li>
@@ -66,7 +64,7 @@
             </ul>
           
             <div class="carousel-inner">
-              <div class="carousel-item active bg-dark">
+              <div class="carousel-item active">
                 <div class="row">
                     <div class="col-lg-6"> 
                         <img src="${contextPath}/resources/img/class_amazon.png" alt="">

@@ -24,7 +24,7 @@ public class RootConfig {
 	public DataSource dataSource() {
 		HikariConfig config = new HikariConfig();
 		config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		config.setJdbcUrl("jdbc:mysql://localhost/board");
+		config.setJdbcUrl("jdbc:mysql://localhost/board_pro");
 		config.setUsername("root");
 		config.setPassword("1234");
 		return new HikariDataSource(config);
