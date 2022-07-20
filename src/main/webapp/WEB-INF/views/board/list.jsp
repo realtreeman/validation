@@ -13,12 +13,11 @@
 	<form action="${contextPath}/board/list" id="listForm">
 		<div>
 			<select name="type">
-				<option value="">===</option>
 				<option value="T" ${pageMaker.criteria.type eq 'T' ? 'selected':''}>제목</option>
 				<option value="C" ${pageMaker.criteria.type eq 'C' ? 'selected':''}>내용</option>
 				<option value="W" ${pageMaker.criteria.type eq 'W' ? 'selected':''}>작성자</option>
 			</select>
-			<input type="text" name="keyword" value="${pageMaker.criteria.keyword}">
+			<input type="text" name="keyword" value="${pageMaker.criteria.keyword}" placeholder="검색어 입력">
 			<button>검색</button>
 		</div>
 	</form>
