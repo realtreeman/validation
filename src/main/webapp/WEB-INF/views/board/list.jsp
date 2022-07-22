@@ -10,7 +10,40 @@
 		<input type="hidden" name="type" id="type" value="${pageMaker.criteria.type}">
 		<input type="hidden" name="keyword" id="keyword" value="${pageMaker.criteria.keyword}">
 	</div>
-	<form action="${contextPath}/board/list" id="listForm">
+	
+	<h2>자유게시판</h2>
+	<a href="register" class="btn btn-outline-secondary">글쓰기</a>
+	<table class="table table-dark table-hover">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>등록일</th>
+				<th>수정일</th>
+			</tr>
+		</thead>
+		<c:forEach items="${list}" var="b">
+		<tbody>
+			<tr>
+				<td>${b.bno}</td>
+				<td>
+					<a href="${b.bno}" class="get">${b.title}</a>
+				</td>
+				<td>${b.writer}</td>
+				<td>
+					<fmt:parseDate var="regDate" value="${b.regDate}" pattern="yyyy-MM-dd'T'HH:mm"/>
+					<fmt:formatDate value="${regDate }" pattern="yyyy년MM월dd일 HH시mm분"/>
+				</td>
+				<td>
+					<fmt:parseDate var="updateDate" value="${b.updateDate}" pattern="yyyy-MM-dd'T'HH:mm"/>
+					<fmt:formatDate value="${updateDate }" pattern="yyyy년MM월dd일 HH시mm분"/>
+				</td>
+			</tr>
+		</tbody>
+		</c:forEach>
+	</table>
+	<form action="${contextPath}/board/list" id="listForm" class="d-flex justify-content-center">
 		<div>
 			<select name="type">
 				<option value="T" ${pageMaker.criteria.type eq 'T' ? 'selected':''}>제목</option>
@@ -21,45 +54,25 @@
 			<button>검색</button>
 		</div>
 	</form>
-	<h2>자유게시판</h2>
-	<a href="register">글쓰기</a>
-	<table class="table">
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>등록일</th>
-			<th>수정일</th>
-		</tr>
-		<c:forEach items="${list}" var="b">
-		<tr>
-			<td>${b.bno}</td>
-			<td>
-				<a href="${b.bno}" class="get">${b.title}</a>
-			</td>
-			<td>${b.writer}</td>
-			<td>
-				<fmt:parseDate var="regDate" value="${b.regDate}" pattern="yyyy-MM-dd'T'HH:mm"/>
-				<fmt:formatDate value="${regDate }" pattern="yyyy년MM월dd일 HH시mm분"/>
-			</td>
-			<td>
-				<fmt:parseDate var="updateDate" value="${b.updateDate}" pattern="yyyy-MM-dd'T'HH:mm"/>
-				<fmt:formatDate value="${updateDate }" pattern="yyyy년MM월dd일 HH시mm분"/>
-			</td>
-		</tr>
-		</c:forEach>
-	</table>
 	
-	<div class="pagination">
-		<c:if test="${pageMaker.prev}">
-			<a href="${pageMaker.startPage -1 }">[이전페이지]</a>
-		</c:if>
-		<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="pageNum">
-			<a href="${pageNum}" class="${pageMaker.criteria.page == pageNum ? 'on':'' }">[${pageNum}]</a>
-		</c:forEach>
-		<c:if test="${pageMaker.next}">
-			<a href="${pageMaker.endPage +1 }">[다음페이지]</a>
-		</c:if>
+		
+	
+	<div class="d-flex justify-content-center">
+		<ul class="pagination">
+			<c:if test="${pageMaker.prev}">
+				<li class="page-item">
+					<a class="page-link" href="${pageMaker.startPage -1 }">[이전페이지]</a>
+				</li>
+			</c:if>
+			<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="pageNum">
+				<li class="page-item" ${pageMaker.criteria.page == page ? 'active' : ''}">
+					<a href="${pageNum}" class="page-link">${pageNum}</a>
+				</li>
+			</c:forEach>
+			<c:if test="${pageMaker.next}">
+				<a class="page-link" href="${pageMaker.endPage +1 }">[다음페이지]</a>
+			</c:if>
+		</ul>
 	</div>
 </div>
 <%@ include file="../layout/footer.jsp" %>

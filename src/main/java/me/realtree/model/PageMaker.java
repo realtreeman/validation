@@ -11,6 +11,7 @@ public class PageMaker {
 	private Criteria criteria;
 	private int startPage;
 	private int endPage;
+	private int tempEndPage;
 	private int totalCount;
 	private int displayPageNum=10;
 	
@@ -23,7 +24,7 @@ public class PageMaker {
 		this.totalCount = totalCount;
 		endPage = (int) (Math.ceil(criteria.getPage()/(double)displayPageNum) * displayPageNum);
 		startPage = endPage - displayPageNum + 1;
-	int tempEndPage = (int) Math.ceil(totalCount/ (double)criteria.getPerPageNum());
+		tempEndPage = (int) Math.ceil(totalCount/ (double)criteria.getPerPageNum());
 		if(endPage > tempEndPage) endPage = tempEndPage; //엔드 페이지 계산
 		
 		//endPage < tempEndPage;

@@ -24,6 +24,14 @@ public class Criteria {
 		return (this.page-1)*perPageNum;
 	}
 	
+	public void setPage(int page) {
+		if(page<0) {
+			this.page=1;
+			return;
+		}
+		this.page=page;
+	}
+	
 	//제목 T 내용 C 작성자 W 
 	//제목+내용 : TC
 	//내용+작성자 : CW
