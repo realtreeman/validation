@@ -8,11 +8,13 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Criteria {
-	int page;
-	int perPageNum;
+	private int page;
+	private int perPageNum;
 	
-	String type; //제목+내용 , 작성자 
-	String keyword;
+	private String type; //제목+내용 , 작성자 
+	private String keyword;
+	
+	private String category;
 	
 	public Criteria() {
 		this.page = 1;

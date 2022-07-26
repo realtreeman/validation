@@ -35,9 +35,9 @@
 							    디아블로2레저렉션
 							</a>
 							<div class="dropdown-menu">
-							  <a class="dropdown-item" href="#">팔라딘</a>
-							  <a class="dropdown-item" href="#">소서리스</a>
-							  <a class="dropdown-item" href="#">네크로멘서</a>
+							  <a class="dropdown-item" href="${contextPath}/board/list/paladin">팔라딘</a>
+							  <a class="dropdown-item" href="${contextPath}/board/list/sorceress">소서리스</a>
+							  <a class="dropdown-item" href="${contextPath}/board/list/get">네크로멘서</a>
 							  <a class="dropdown-item" href="#">아마존</a>
 							  <a class="dropdown-item" href="#">드루이드</a>
 							  <a class="dropdown-item" href="#">어쌔신</a>
@@ -45,7 +45,7 @@
 							</div>
 						</li>
                         <li><a href="" class="text-secondary">오늘의 득템목록</a></li>
-                        <li><a href="${contextPath}/board/list" class="text-secondary">자유게시판</a></li>
+                        <li><a href="${contextPath}/board/list/board" class="text-secondary">자유게시판</a></li>
                         <li class="btn-group">
 							<a  class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 							    아이템 정보

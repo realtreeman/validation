@@ -23,8 +23,8 @@ public class RootConfig {
 	@Bean
 	public DataSource dataSource() {
 		HikariConfig config = new HikariConfig();
-		config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		config.setJdbcUrl("jdbc:mysql://localhost/board_pro");
+		config.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+		config.setJdbcUrl("jdbc:log4jdbc:mysql://localhost/board_pro");
 		config.setUsername("root");
 		config.setPassword("1234");
 		return new HikariDataSource(config);

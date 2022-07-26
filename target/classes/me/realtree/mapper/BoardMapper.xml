@@ -7,7 +7,12 @@
 
 	<sql id="search">
 		<where>
-			<trim prefixOverrides="OR">
+			<trim suffixOverrides="AND">
+				<if test="category!=null and category!=''">
+					category = #{category}  
+				</if>
+			</trim>	
+			<trim prefixOverrides="OR|AND" prefix="AND">
 				<foreach collection="typeCollection">
 					<trim prefix="OR">
 						<choose>
@@ -25,14 +30,8 @@
 				</foreach>
 			</trim>
 		</where>
-	
 	</sql>
 	<select id="getList" resultType="me.realtree.model.Board">
-		<!-- 
-			select * from board_tbl where title like '%스프링%'
-			OR writer like '%홍길동%'
-		-->
-		<!-- 안녕스프링안녕 키워드{keyword} 전후로 어떤글자가 와도 가능 -->
 		select * from board_tbl 
 		<include refid="search" />
 		order by bno desc

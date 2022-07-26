@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,27 +24,28 @@ public class BoardController {
 	@Autowired
 	BoardServiceImpl service;
 	
-	@GetMapping("/list")
-	public String boardList(Model model, Criteria criteria) {
+	@GetMapping("/list/{category}")
+	public String boardList(Model model, Criteria criteria, @PathVariable String category) {
+		criteria.setCategory(category);
 		PageMaker pageMaker = new PageMaker(criteria, service.totalCount(criteria));
 		model.addAttribute("list",service.getList(criteria));
 		model.addAttribute("pageMaker",pageMaker);
 		return "board/list";
 	}
-	@GetMapping("/get")
-	public String get(Long bno,Model model) {
+	@GetMapping("/{category}/get")
+	public String get(Long bno,Model model, @PathVariable String category) {
 		model.addAttribute("board",service.get(bno));
 		return "board/get";
 	}
 	
-	@GetMapping("/modify")
-	public String modifyForm(Long bno,Model model) {
+	@GetMapping("/{category}/modify")
+	public String modifyForm(Long bno,Model model, @PathVariable String category) {
 		model.addAttribute("board",service.get(bno));
 		return "board/modify";
 	}
 	
-	@PostMapping("/modify")
-	public String modify(Board board, RedirectAttributes rttr) {
+	@PostMapping("/{category}/modify")
+	public String modify(Board board, RedirectAttributes rttr, @PathVariable String category) {
 		service.modify(board);
 		rttr.addFlashAttribute("message", board.getBno());
 		return "redirect:list";
