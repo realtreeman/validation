@@ -8,6 +8,7 @@
 		<input type="hidden" name="bno" id="bno" value="">
 		<input type="hidden" name="page" id="page" value="${pageMaker.criteria.page}">
 		<input type="hidden" name="type" id="type" value="${pageMaker.criteria.type}">
+		
 		<input type="hidden" name="keyword" id="keyword" value="${pageMaker.criteria.keyword}">
 		<input type="hidden" name="category" id="category" value="${pageMaker.criteria.category}">
 	</div>

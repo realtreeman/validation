@@ -37,7 +37,8 @@ $(function(){
 		getForm.append($('#page'));
 		getForm.append($('#type'));
 		getForm.append($('#keyword'));
-		getForm.attr("action","list");
+//		getForm.attr("action","list");
+		getForm.attr("action","../"+category+"/list");
 		getForm.submit();
 	
 	})
